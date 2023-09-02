@@ -1,31 +1,4 @@
 // Let's start with a simple type alias for a guitarist object
-type Guitarist = {
-    name: string,
-    active: boolean,
-    albums: (string | number)[]
-};
-
-// We can create a type alias for a union of string or number.
-type StringOrNumber = string | number;
-
-// We can also create a type alias for a union of string or number as an array.
-type StringOrNumberArray = StringOrNumber[];
-
-// Now, let's use our type aliases inside another type alias.
-type User = {
-    userId: StringOrNumber,
-    username: StringOrNumber,
-};
-
-// Literal types allow us to specify exact values.
-type MyName = 'Dave';
-const myName: MyName = 'Dave'; // Valid assignment
-// const myName: MyName = 'John'; // Error: Cannot assign 'John' to MyName
-
-// Literal types with union for more flexibility.
-type Username = 'Dave' | 'John' | 'Amy';
-let username: Username = 'Amy'; // Valid assignment
-// let username: Username = 'Rachel'; // Error: Cannot assign 'Rachel' to Username
 
 // Functions with explicit parameter types and return type.
 function add(a: number, b: number): number {

@@ -143,6 +143,12 @@ let guitarist2: guitaristWithOptionalName = {
   albums: [1, 2],
 };
 
+type Guitarist = {
+  name: string,
+  active: boolean,
+  albums: (string | number)[]
+};
+
 // We can create a type alias for a union of string or number.
 type StringOrNumber = string | number;
 
@@ -157,6 +163,7 @@ type User = {
 
 // Literal types allow us to specify exact values.
 type MyName = 'Dave';
+const myName: MyName = 'Dave'; // Valid assignment
 // const myName: MyName = 'John'; // Error: Cannot assign 'John' to MyName
 
 // Literal types with union for more flexibility.
