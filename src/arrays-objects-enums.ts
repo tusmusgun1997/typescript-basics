@@ -143,6 +143,27 @@ let guitarist2: guitaristWithOptionalName = {
   albums: [1, 2],
 };
 
+// We can create a type alias for a union of string or number.
+type StringOrNumber = string | number;
+
+// We can also create a type alias for a union of string or number as an array.
+type StringOrNumberArray = StringOrNumber[];
+
+// Now, let's use our type aliases inside another type alias.
+type User = {
+  userId: StringOrNumber,
+  username: StringOrNumber,
+};
+
+// Literal types allow us to specify exact values.
+type MyName = 'Dave';
+// const myName: MyName = 'John'; // Error: Cannot assign 'John' to MyName
+
+// Literal types with union for more flexibility.
+type Username = 'Dave' | 'John' | 'Amy';
+let username: Username = 'Amy'; // Valid assignment
+// let username: Username = 'Rachel'; // Error: Cannot assign 'Rachel' to Username
+
 // Enums
 // Working with enums in TypeScript.
 
