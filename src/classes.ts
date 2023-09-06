@@ -1,5 +1,3 @@
-// Welcome to the world of TypeScript classes and interfaces. We'll embark on an exciting journey to explore the concepts and features of TypeScript classes using this code as our guide.
-
 // Let's start by defining a class called "Coder". This class represents a coder and has several properties and methods.
 class Coder {
     // Inside the class, we have defined some properties (also known as members).
