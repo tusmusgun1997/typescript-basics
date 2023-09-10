@@ -1,19 +1,23 @@
 "use strict";
-// Arrays, Objects, and Enums in TypeScript
-// We start with a basic TypeScript file.
-// Arrays
+// Section 1: Arrays, Objects, and Enums in TypeScript
+{ }
+[];
+var New;
+(function (New) {
+})(New || (New = {}));
+// Section 2: Arrays
 // Defining arrays in TypeScript.
 // Define three arrays: stringArray, guitars, and mixedData.
 let stringArray = ["hey", "Dave"]; // An array of strings
 let guitars = ["Stratocaster", "Les Paul", 5150]; // An array with a union type
 let mixedData = ["evh", 1984, true]; // Another array with a union type
 // TypeScript infers the types for these arrays based on their initial values.
-// Accessing typescript's type inference.
+// Accessing TypeScript's type inference.
 // If we hover over these variables, TypeScript helps us understand their inferred types.
 // stringArray: An array of strings
 // guitars: An array of strings or numbers (a union type)
 // mixedData: An array of strings, numbers, or booleans (a union type)
-// Let's see what TypeScript thinks about these arrays.
+// Section 3: Attempting to modify array elements with incorrect types.
 // Attempting to assign a number to a string array element.
 stringArray[0] = 42; // TypeScript error: Type 'number' is not assignable to type 'string'
 // Pushing a number to a string array.
@@ -26,7 +30,7 @@ guitars[0] = 1984; // No TypeScript error, as the union type allows numbers
 guitars.unshift("Jim"); // No TypeScript error, as the string type is allowed
 // Attempting to add a boolean to the guitars array.
 guitars.unshift(true); // TypeScript error: Argument of type 'true' is not assignable to parameter of type 'string' or 'number'
-// Reassigning arrays
+// Section 4: Reassigning arrays
 // Demonstrating how we can reassign arrays in TypeScript.
 // Assigning the guitars array to the stringArray variable.
 stringArray = guitars; // TypeScript error: Type 'string | number'[] is not assignable to type 'string[]'
@@ -36,6 +40,7 @@ guitars = stringArray; // No TypeScript error, as the union type of guitars acce
 guitars = mixedData; // TypeScript error: Type 'string | number | boolean'[] is not assignable to type 'string | number'[]
 // Assigning the guitars array to the mixedData variable.
 mixedData = guitars; // No TypeScript error, as mixedData accepts strings, numbers, or booleans
+// Section 5: Defining arrays with explicit types.
 // Defining an empty array with the 'any' type.
 let test = [];
 // TypeScript infers the type as 'any', allowing any data type in the array.
@@ -44,16 +49,16 @@ let bands = [];
 // TypeScript expects this array to only contain strings.
 bands.push("Van Halen"); // No TypeScript error, as it's a string
 bands.push(true); // TypeScript error: Argument of type 'true' is not assignable to parameter of type 'string'
-// Tuples
+// Section 6: Tuples
 // Demonstrating tuples in TypeScript.
 // Defining a tuple named 'myTuple' with specific element types and order.
 let myTuple = ["Dave", 42, true];
 // TypeScript knows the exact types and order of elements in a tuple.
-// Attempting to assign 'mixed' to 'myTuple'.
+// Attempting to assign 'mixedData' to 'myTuple'.
 myTuple = mixedData; // TypeScript error: Type 'string | number | boolean'[] is not assignable to type '[string, number, boolean]'
 // Attempting to add an element to an undefined position in 'myTuple'.
 myTuple[3] = 42; // TypeScript error: Type '42' is not assignable to type 'undefined'
-// Objects
+// Section 7: Objects
 // Working with objects in TypeScript.
 // Defining an object named 'exampleObject' with specific property types.
 const exampleObject = {
@@ -88,7 +93,10 @@ let guitarist2 = {
     active: true,
     albums: [1, 2],
 };
-// Enums
+const myName = 'Dave'; // Valid assignment
+let username = 'Amy'; // Valid assignment
+// let username: Username = 'Rachel'; // Error: Cannot assign 'Rachel' to Username
+// Section 11: Enums
 // Working with enums in TypeScript.
 // Defining an enum named 'Grade'.
 var Grade;
@@ -102,7 +110,7 @@ var Grade;
 // Accessing enum values.
 console.log(Grade.U); // Outputs: 0
 // Changing enum values.
-Grade.U = 1; // Changing the value of 'U' to 1
+// U = 1;  Changing the value of 'U' to 1
 console.log(Grade.U); // Outputs: 1
 // Enum values are automatically incremented from the first value.
 console.log(Grade.B); // Outputs: 4
