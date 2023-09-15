@@ -1,4 +1,3 @@
-// Welcome to the TypeScript utility types tutorial.
 
 // We'll begin by importing some important TypeScript concepts.
 // Let's create a simple utility function that adds two numbers.
