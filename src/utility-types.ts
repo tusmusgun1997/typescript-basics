@@ -14,7 +14,6 @@ function add(a: number, b: number): number {
   console.log(result); // Output: 8
   
   // ---------------------------------------------------------------------------
-  // PARTIAL UTILITY TYPE
   
   // TypeScript offers utility types to help with common type transformations.
   // The 'Partial' utility type allows us to make properties of a type optional.
